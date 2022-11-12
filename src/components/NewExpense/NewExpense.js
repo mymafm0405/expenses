@@ -1,12 +1,15 @@
-import React from 'react'
-import ExpenseForm from './ExpenseForm'
+import React from "react";
+import ExpenseForm from "./ExpenseForm";
 
-import './NewExpense.css'
+import "./NewExpense.css";
 
-export default function NewExpense() {
+export default function NewExpense(props) {
+  const saveExpHandler = (exp) => {
+    props.onAddExp(exp);
+  };
   return (
-    <div className='new-expense'>
-        <ExpenseForm />
+    <div className="new-expense">
+      <ExpenseForm onSaveExp={saveExpHandler} />
     </div>
-  )
+  );
 }
